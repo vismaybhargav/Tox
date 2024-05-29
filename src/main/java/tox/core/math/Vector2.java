@@ -1,5 +1,5 @@
 package tox.core.math;
 
-public class Vector2D {
+public class Vector2 {
 
 }
