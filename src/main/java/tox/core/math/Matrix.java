@@ -28,18 +28,16 @@ public class Matrix {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Matrix m) {
-            if(m.cols == cols && m.rows == rows) {
-                for(int i = 0; i < m.rows; i++) {
-                    for(int j = 0; j < m.cols; j++) {
-                        if(m.get(i, j) != mat[i][j]) {
-                            break;
-                        }
-                    }
+        if(!(obj instanceof Matrix m)) return false;
+        if(m.cols != cols || m.rows != rows) return false;
+
+        for (int i = 0; i < m.rows; i++) {
+            for (int j = 0; j < m.cols; j++) {
+                if (m.get(i, j) != mat[i][j]) {
+                    return false;
                 }
-                return true;
             }
         }
-        return false;
+        return true;
     }
 }
